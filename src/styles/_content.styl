@@ -1,0 +1,160 @@
+@require '_variables';
+@require '_code';
+@require '~@vuepress/theme-default/styles/custom-blocks';
+
+.custom-block {
+  &.tip {
+    border-color: #75cac3;
+    background-color: $bgColor;
+  }
+
+  &.danger {
+    border-color: #ff5252;
+    background: #ffe6e6;
+    color: #ff5252;
+  }
+
+  &.warning {
+    border-color: #f3d516;
+    background: #f5f3df;
+    color: #f3d516;
+  }
+}
+
+.content {
+  word-break: break-all;
+  font-size: 16px;
+  line-height: 1.5;
+
+  a {
+    color: $accentColor;
+    text-decoration: none;
+
+    &.header-anchor {
+      float: left;
+      margin-left: -0.75em;
+      opacity: 0;
+      transition: opacity 150ms ease;
+    }
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    margin: 1em 0;
+    color: $titleColor;
+
+    &:hover {
+      color: $accentColor;
+
+      .header-anchor {
+        opacity: 1;
+      }
+    }
+  }
+
+  h1 {
+    font-weight: 600;
+    font-size: 1.6em;
+  }
+
+  h2 {
+    font-weight: 600;
+    font-size: 1.4em;
+  }
+
+  h3 {
+    font-size: 1.2em;
+  }
+
+  h4 {
+    font-size: 1.1em;
+  }
+
+  h5 {
+    font-size: 1em;
+  }
+
+  h6 {
+    font-size: 0.9em;
+  }
+
+  p {
+    margin: 1em 0;
+
+    &.demo {
+      padding: 1em 1.5em;
+      border: 1px dashed $borderColor;
+      border-radius: $baseRadius;
+    }
+  }
+
+  ul, ol {
+    padding-left: 2em;
+
+    li {
+      margin-top: 4px;
+    }
+  }
+
+  img {
+    display: block;
+    margin: 2em auto;
+    max-width: 100%;
+  }
+
+  hr {
+    margin: 2.5em 100px;
+    border: none;
+    border-top: 1px dashed $borderColor;
+  }
+
+  strong {
+    font-weight: 600;
+  }
+
+  em {
+    font-weight: inherit;
+    font-style: italic;
+  }
+
+  blockquote {
+    margin: 0.8em 0;
+    padding: 1em;
+    border-left: 0.25em solid $borderColor;
+    background-color: $bgColor;
+
+    >:first-child {
+      margin-top: 0;
+    }
+
+    >:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  table {
+    margin: 1em 0;
+    max-width: 100%;
+    border-collapse: collapse;
+  }
+
+  tr {
+    border-top: 1px solid $borderColor;
+
+    &:nth-child(2n) {
+      background-color: $bgColor;
+    }
+  }
+
+  th {
+    font-weight: 600;
+  }
+
+  th, td {
+    padding: 0.5em 1em;
+    border: 1px solid $borderColor;
+  }
+}

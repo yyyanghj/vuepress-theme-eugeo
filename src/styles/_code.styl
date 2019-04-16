@@ -1,0 +1,189 @@
+
+@require '_variables';
+@require '_syntax';
+
+.content {
+  code {
+    font-size: 14px !important;
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', sans-serif;
+  }
+
+  pre, pre[class*='language-'] {
+    overflow: auto;
+    margin: 0.85em 0;
+    padding: 1.25em 1.5em;
+    border-radius: 6px;
+    background-color: $codeBgColor;
+    line-height: 1.4;
+
+    code {
+      margin: 0;
+      padding: 0;
+      border-radius: 0;
+      color: #aec3e0;
+
+      .token {
+        &.deleted {
+          color: #EC5975;
+        }
+
+        &.inserted {
+          color: $accentColor;
+        }
+      }
+    }
+  }
+
+  :not(pre) > code {
+    display: inline-block;
+    margin: 2px 4px;
+    padding: 0 8px;
+    border-radius: 3px;
+    background-color: #f5f5f5f2;
+    box-shadow: 0 1px 2px 0 rgba(#000, 0.2), 0 1px 1px 0 rgba(#000, 0.1);
+    color: #bd4147 !important;
+  }
+}
+
+div[class*='language-'] {
+  position: relative;
+  border-radius: 6px;
+  background-color: $codeBgColor;
+
+  .highlight-lines {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding-top: 1.3em;
+    width: 100%;
+    line-height: 1.4;
+    user-select: none;
+
+    .highlighted {
+      border-left: 4px solid $accentColor;
+      background-color: $highlightBgColor;
+    }
+  }
+
+  pre, pre[class*='language-'] {
+    position: relative;
+    z-index: 1;
+    background: transparent;
+  }
+
+  &::before {
+    position: absolute;
+    top: 0.8em;
+    right: 1em;
+    z-index: 3;
+    color: rgba(255, 255, 255, 0.4);
+    font-size: 0.75em;
+  }
+
+  &:not(.line-numbers-mode) {
+    .line-numbers-wrapper {
+      display: none;
+    }
+  }
+
+  &.line-numbers-mode {
+    .highlight-lines .highlighted {
+      position: relative;
+
+      &:before {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 3;
+        display: block;
+        width: $lineNumbersWrapperWidth;
+        height: 100%;
+        background-color: $highlightBgColor;
+        content: ' ';
+      }
+    }
+
+    pre {
+      padding-left: ($lineNumbersWrapperWidth + 1) em;
+      vertical-align: middle;
+    }
+
+    .line-numbers-wrapper {
+      position: absolute;
+      top: 0;
+      padding: 1.25em 0;
+      width: $lineNumbersWrapperWidth;
+      color: rgba(255, 255, 255, 0.65);
+      text-align: center;
+      line-height: 1.4;
+
+      br {
+        user-select: none;
+      }
+
+      .line-number {
+        position: relative;
+        z-index: 4;
+        font-size: 0.85em;
+        user-select: none;
+      }
+    }
+
+    &::after {
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 2;
+      width: $lineNumbersWrapperWidth;
+      height: 100%;
+      border-right: 1px solid rgba(0, 0, 0, 66%);
+      border-radius: 6px 0 0 6px;
+      background-color: $codeBgColor;
+      content: '';
+    }
+  }
+}
+
+for lang in $codeLang {
+  div{'[class~="language-' + lang + '"]'} {
+    &:before {
+      content: '' + lang;
+    }
+  }
+}
+
+div[class~='language-javascript']:before {
+  content: 'js';
+}
+
+div[class~='language-typescript']:before {
+  content: 'ts';
+}
+
+div[class~='language-markup']:before {
+  content: 'html';
+}
+
+div[class~='language-markdown']:before {
+  content: 'md';
+}
+
+div[class~='language-json']:before {
+  content: 'json';
+}
+
+div[class~='language-ruby']:before {
+  content: 'rb';
+}
+
+div[class~='language-python']:before {
+  content: 'py';
+}
+
+div[class~='language-bash']:before {
+  content: 'sh';
+}
+
+div[class~='language-php']:before {
+  content: 'php';
+}

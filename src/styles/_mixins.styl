@@ -1,0 +1,33 @@
+@require '_variables';
+
+font($size) {
+  font-size: $size;
+  line-height: $size + 8px;
+}
+
+text-elip($row) {
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-line-clamp: $row;
+  -webkit-box-orient: vertical;
+}
+
+cursorPointer() {
+  // cursor: url('~@eugeo/assets/img/pointer.svg'), pointer !important;
+  cursor: -webkit-image-set(url('~@eugeo/assets/img/pointer.png') 4x) 9 0, auto !important;
+}
+
+shadow($n = 1) {
+  box-shadow: 0px $n * 4px $n * 12px rgba(#a2a8d3, 0.2), 0px $n * 4px $n * 8px rgba(#a2a8d3, 0.2);
+}
+
+spacer($num = 1) {
+  $baseSpace * $num;
+}
+
+widget() {
+  overflow: hidden;
+  border-radius: $baseRadius;
+  background-color: $widgetBgColor;
+  shadow();
+}

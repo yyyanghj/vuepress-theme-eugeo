@@ -1,0 +1,81 @@
+@require '_variables';
+@require '_mixins';
+@require '_base';
+@require '_content';
+@require '_motions';
+
+body {
+  background: $bgColor;
+  color: $fgColor;
+  cursor: -webkit-image-set(url('~@eugeo/assets/img/cursor.png') 4x) 0 0, auto !important;
+
+  ::selection {
+    background: $fgColor;
+    color: $bgColor;
+  }
+
+  &::-webkit-scrollbar {
+    width: 4px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    border-radius: 4px;
+    background: $accentColor;
+  }
+
+  &[data-theme='light'] {
+    for key, val in $theme-light {
+      {'--' + key}: val;
+    }
+  }
+
+  &[data-theme='dark'] {
+    for key, val in $theme-dark {
+      {'--' + key}: val;
+    }
+  }
+
+  a, button {
+    cursorPointer();
+  }
+}
+
+.headline {
+  display: flex;
+  align-items: center;
+  font-size: 20px;
+
+  &::before, &::after {
+    display: block;
+    flex: 1;
+    border-top: 1px dashed $borderColor;
+    content: '';
+  }
+
+  &::before {
+    margin-right: spacer(2);
+  }
+
+  &::after {
+    margin-left: spacer(2);
+  }
+}
+
+// override
+.medium-zoom-overlay {
+  background-color: rgba($black, 0.8) !important;
+  backdrop-filter: blur(5px);
+}
+
+.vssue {
+  color: $fgColor;
+
+  .markdown-body {
+    color: inherit;
+  }
+
+  .vssue-comment-avatar {
+    overflow: hidden;
+    border-radius: 50%;
+  }
+}

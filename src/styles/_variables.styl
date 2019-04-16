@@ -1,0 +1,44 @@
+/* palette.styl 里可修改变量值 */
+/* theme */
+$theme-dark ?= {
+  fgColor: #b0dfe8,
+  bgColor: #363d49,
+  titleColor: #fafafa,
+  accentColor: #ff5370,
+  widgetBgColor: #11313b
+};
+/* #48505b */
+$theme-light ?= {
+  fgColor: #676778,
+  bgColor: #f5f7f9,
+  titleColor: #48505b,
+  accentColor: #40b3ff,
+  widgetBgColor: #fff
+};
+/* colors */
+$white ?= #fff;
+$black ?= #000;
+$codeBgColor ?= #011627;
+$highlightBgColor ?= #000000b3;
+$borderColor ?= #a2a8d380;
+/* css property color */
+$fgColor = var(--fgColor);
+$bgColor = var(--bgColor);
+$titleColor = var(--titleColor);
+$accentColor = var(--accentColor);
+$widgetBgColor = var(--widgetBgColor);
+/* vssue */
+$vssue-theme-color ?= #3c96ff;
+/* layout */
+$baseSpace ?= 8px;
+$baseRadius ?= 6px;
+$appBarHeight ?= 48px;
+$sideBarWidth ?= 280px;
+/* responsive breakpoints */
+$MQWide ?= 1440px;
+$MQNarrow ?= 1024px;
+$MQMobile ?= 768px;
+$MQMobileNarrow ?= 480px;
+/* code */
+$lineNumbersWrapperWidth ?= 2rem;
+$codeLang ?= js ts html md vue css sass scss less stylus go java c sh yaml py;
