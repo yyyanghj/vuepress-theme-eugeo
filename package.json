@@ -14,13 +14,19 @@
     "VuePress",
     "Theme"
   ],
-  "author": "yang",
+  "author": "coolyang",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/Coolyang1996/vuepress-theme-eugeo/issues"
   },
   "homepage": "https://github.com/Coolyang1996/vuepress-theme-eugeo#readme",
   "devDependencies": {
+    "eslint-plugin-vue": "^5.2.2"
+  },
+  "dependencies": {
+    "dayjs": "^1.8.12",
+    "lodash": "^4.17.11",
+    "vue-lazyload": "^1.2.6",
     "@vssue/vuepress-plugin-vssue": "^0.8.2",
     "@vuepress/plugin-active-header-links": "^1.0.0-alpha.47",
     "@vuepress/plugin-blog": "^1.0.0-alpha.47",
@@ -31,12 +37,6 @@
     "markdown-it-task-lists": "^2.1.1",
     "style-resources-loader": "^1.2.1",
     "vuepress-plugin-reading-time": "^0.1.1",
-    "vuepress-plugin-smooth-scroll": "^0.0.3",
-    "eslint-plugin-vue": "^5.2.2"
-  },
-  "dependencies": {
-    "dayjs": "^1.8.12",
-    "lodash": "^4.17.11",
-    "vue-lazyload": "^1.2.6"
+    "vuepress-plugin-smooth-scroll": "^0.0.3"
   }
 }
