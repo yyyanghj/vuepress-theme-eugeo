@@ -28,7 +28,7 @@ module.exports = (opts = {}, ctx) => {
   return {
     name: 'eugeo-blog-plugin',
 
-    enhanceAppFiles: path.resolve(__dirname, 'enhanceAppFile.js'),
+    enhanceAppFiles: path.resolve(__dirname, 'enhanceApp.js'),
 
     async ready() {
       await Promise.all(extraPages.map(page => ctx.addPage(page)));

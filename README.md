@@ -1,6 +1,7 @@
 # vuepress-theme-eugeo
 
 A theme for Vuepress
+[demo](http://coolyang.xyz/)
 
 ## Installation
 
