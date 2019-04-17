@@ -14,6 +14,7 @@ module.exports = {
   },
   themeConfig: {
     dataFormat: 'MMM D, YYYY',
+
     nav: [
       { link: '/', text: 'Home', icon: 'home', exact: true },
       { link: 'https://github.com/Coolyang1996/vuepress-theme-eugeo', text: 'Github' }

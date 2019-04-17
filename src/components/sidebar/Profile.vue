@@ -1,6 +1,6 @@
 <template>
-  <section class="profile">
-    <img :src="profile.avatar" alt="avatar" class="avatar" />
+  <section class="profile" v-if="profile">
+    <img :src="profile.avatar" alt="avatar" class="avatar">
 
     <h3 v-if="profile.nickname" class="nickname">{{ profile.nickname }}</h3>
 
@@ -17,13 +17,7 @@
     </div>
 
     <div class="sns">
-      <a
-        :href="link"
-        class="item"
-        v-for="(link, name) in sns"
-        :key="name"
-        target="_blank"
-      >
+      <a :href="link" class="item" v-for="(link, name) in sns" :key="name" target="_blank" rel="noopener noreferrer">
         <v-icon class="icon" :name="name"></v-icon>
         <span class="tip">{{ name }}</span>
       </a>

@@ -27,6 +27,9 @@ module.exports = {
     // 日期显示格式, 格式参考 https://github.com/iamkun/dayjs/blob/dev/docs/en/API-reference.md#displaying
     dataFormat: 'MMM D, YYYY',
 
+    // logo
+    logo: '/img/coolyang.jpg',
+
     // 增加的导航项, icon需要iconfont的svg图标
     nav: [{ link: '/about', text: 'About', icon: 'iconname', exact: true }],
 

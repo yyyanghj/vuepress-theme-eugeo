@@ -1,7 +1,10 @@
 <template>
   <header class="app-bar" :class="{hidden: isHidden}">
     <Menu/>
-    <router-link tag="h1" class="title" to="/">{{$siteTitle}}</router-link>
+    <router-link class="home-link" to="/">
+      <img class="logo" v-if="$themeConfig.logo" :src="$withBase($themeConfig.logo)" alt="logo">
+      <h1 class="title">{{$siteTitle}}</h1>
+    </router-link>
     <span class="spacer"></span>
     <Navigation/>
     <themeSwitch/>
@@ -54,10 +57,22 @@ export default {
     margin-left: -1 * spacer(3);
   }
 
-  .title {
-    color: $titleColor;
-    font-size: 24px;
-    cursorPointer();
+  .home-link {
+    display: flex;
+    align-items: center;
+
+    .title {
+      color: $titleColor;
+      font-size: 24px;
+      cursorPointer();
+    }
+
+    .logo {
+      display: block;
+      margin-right: spacer(2);
+      max-width: 80px;
+      max-height: 40px;
+    }
   }
 
   .spacer {
