@@ -37,17 +37,18 @@ export default {
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 24;
+  z-index: 16;
   display: flex;
   align-items: center;
   padding: 0 spacer(3);
   width: 100%;
   height: $appBarHeight;
+  border-bottom: 1px solid $borderColor;
   background-color: $widgetBgColor;
   opacity: 1;
   transition: transform 450ms ease, opacity 150ms ease;
-  shadow();
 
+  // shadow();
   &.hidden {
     opacity: 0.5;
     transform: translateY(-110%);

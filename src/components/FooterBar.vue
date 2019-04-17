@@ -1,39 +1,44 @@
 <template>
   <footer class="footer">
     <p>
-      &copy;2019&nbsp;
-      <span class="heart">♥</span> &nbsp;
+      &copy;2019
+      <span class="heart">♥</span>
       Coolyang
     </p>
     <p>
       Powered by
       <a class="link" href="https://vuepress.vuejs.org/">Vuepress</a>
-      &nbsp;&nbsp;|&nbsp;&nbsp;
-      Theme
-      <a class="link" href="/">Eugeo</a>
+      <span>| Theme</span>
+      <a class="link" href="https://github.com/Coolyang1996/vuepress-theme-eugeo">Eugeo</a>
     </p>
   </footer>
 </template>
 
 <script>
 export default {
-  name: 'TheFooter'
+  name: 'FooterBar'
 };
 </script>
 
 <style lang="stylus" scoped>
 .footer {
-  // position: relative;
-  // z-index: 16;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 64px;
   background-color: $widgetBgColor;
   text-align: center;
   font(14px);
   shadow();
+
+  p {
+    margin-top: spacer();
+  }
+
+  span {
+    display: inline-block;
+    margin: 0 4px;
+  }
 
   .link {
     color: $accentColor;

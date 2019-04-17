@@ -36,10 +36,11 @@ export default {
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 16;
+  z-index: 12;
+  display: flex;
+  flex-direction: column;
   overflow-y: auto;
   padding-top: $appBarHeight;
-  // padding-bottom: 64px;
   width: $sideBarWidth;
   height: 100vh;
   background-color: $bgColor;
@@ -55,7 +56,8 @@ export default {
   }
 
   .profile, .post-info, .nav, .search-box {
-    margin: spacer(2) spacer();
+    flex-shrink: 0;
+    margin: spacer();
   }
 
   .search-box {
@@ -63,6 +65,7 @@ export default {
   }
 
   .nav {
+    flex: 1;
     flex-direction: column;
     align-items: stretch;
   }

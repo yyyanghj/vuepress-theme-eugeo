@@ -9,11 +9,11 @@
       </transition>
     </main>
 
-    <component :is="theFooter"></component>
+    <component :is="footerBar" class="footer"></component>
 
     <BackToTop :isHidden="isBackToTopHidden"/>
 
-    <div v-show="!state.isSideBarHidden" class="side-mask" @click.stop="closeSideBar" @touchmove.prevent="void 0"></div>
+    <div v-show="!state.isSideBarHidden" class="mask" @click.stop="closeSideBar" @touchmove.prevent="void 0"></div>
   </div>
 </template>
 
@@ -22,16 +22,16 @@ import throttle from 'lodash/throttle';
 import state from '@eugeo/store/';
 import AppBar from '../components/appbar/AppBar';
 import SideBar from '../components/SideBar/SideBar';
-import TheFooter from '../components/TheFooter';
 import BackToTop from '../components/BackToTop';
+import FooterBar from '../components/FooterBar';
 
 export default {
   name: 'GlobalLayout',
   components: {
     AppBar,
     SideBar,
-    TheFooter,
-    BackToTop
+    BackToTop,
+    FooterBar
   },
   data: () => ({
     state,
@@ -54,9 +54,10 @@ export default {
 
       return 'Layout';
     },
-    theFooter() {
+
+    footerBar() {
       return (
-        this.$frontmatter.footer || this.$themeConfig.footer || 'TheFooter'
+        this.$frontmatter.footer || this.$themeConfig.footer || 'FooterBar'
       );
     }
   },
@@ -104,7 +105,13 @@ export default {
     margin: 0 auto;
   }
 
-  .side-mask {
+  .footer {
+    position: relative;
+    z-index: 8;
+    min-height: 88px;
+  }
+
+  .mask {
     position: fixed;
     top: 0;
     left: 0;
@@ -126,24 +133,24 @@ export default {
   }
 
   @media (min-width: $MQNarrow) {
-    padding-left: $sideBarWidth;
-
-    .side-bar {
-      padding-top: 0;
-      border-right: 1px dashed $borderColor;
-      transform: translateX(0) !important;
-    }
-
-    .main {
-      margin-top: 0;
-    }
-
     .app-bar {
-      position: relative;
+      opacity: 1 !important;
+      transform: translateY(0) !important;
 
       .menu {
         display: none;
       }
+    }
+
+    .side-bar {
+      padding-top: $appBarHeight;
+      background: transparent;
+      transform: translateX(0) !important;
+    }
+
+    .main {
+      margin-left: $sideBarWidth;
+      border-left: 1px dashed $borderColor;
     }
   }
 }
