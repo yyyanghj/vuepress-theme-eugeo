@@ -3,22 +3,22 @@
     <Menu/>
     <router-link tag="h1" class="title" :to="$withBase('/')">{{$siteTitle}}</router-link>
     <span class="spacer"></span>
-    <SearchBox/>
-    <themeIcon/>
+    <Navigation/>
+    <themeSwitch/>
   </header>
 </template>
 
 <script>
 import Menu from './Menu';
-import themeIcon from './themeIcon';
-import SearchBox from './SearchBox';
+import themeSwitch from './themeSwitch';
+import Navigation from '../Navigation';
 
 export default {
   name: 'AppBar',
   components: {
     Menu,
-    themeIcon,
-    SearchBox
+    Navigation,
+    themeSwitch
   },
   props: {
     isHidden: {
@@ -51,7 +51,7 @@ export default {
   }
 
   .menu {
-    margin-left: -24px;
+    margin-left: -1 * spacer(3);
   }
 
   .title {
@@ -64,15 +64,13 @@ export default {
     flex: 1;
   }
 
-  .search-box {
-    margin-right: spacer(3);
+  .theme-switch {
+    margin-left: spacer(3);
+  }
 
-    @media (max-width: $MQMobile) {
-      margin-right: spacer();
-
-      & >>> .search-input:focus {
-        width: 160px;
-      }
+  @media (max-width: $MQMobile - 1) {
+    .nav {
+      display: none;
     }
   }
 }

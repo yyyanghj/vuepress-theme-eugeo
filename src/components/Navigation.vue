@@ -1,5 +1,5 @@
 <template>
-  <nav class="side-nav">
+  <nav class="nav">
     <router-link
       class="nav-item"
       :exact="item.exact"
@@ -16,9 +16,14 @@
 
 <script>
 export default {
-  name: 'SideNav',
+  name: 'Navigation',
   computed: {
     navItems() {
+      /*  const items = [
+        { link: '/', text: 'Home', icon: 'home', exact: true },
+        { link: '/archive/', text: 'Archive', icon: 'folder', exact: true }
+      ]; */
+
       return this.$themeConfig.nav || [];
     }
   }
@@ -26,24 +31,22 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
-.side-nav {
-  .nav-item {
-    widget();
-    display: flex;
-    align-items: center;
-    margin-bottom: spacer();
-    padding: spacer() spacer(2);
-    width: 75%;
-    border-radius: $baseRadius * 0.5;
-    transition: width 450ms ease;
+.nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
-    .icon {
-      margin-right: spacer(1.5);
+  .nav-item {
+    display: block;
+    padding: spacer() spacer(2);
+    font-size: 16px;
+
+    &.active {
+      color: $accentColor;
     }
 
-    &:hover, &.active {
-      width: 100%;
-      color: $accentColor;
+    .icon {
+      margin-right: spacer(0.5);
     }
   }
 }

@@ -30,7 +30,7 @@ export default {
         })
         .reduce((map, post) => {
           const { date } = post.frontmatter;
-          const year = new Date(date).getFullYear().toString();
+          const year = dayjs(date).year();
           if (!map[year]) {
             map[year] = [];
           }

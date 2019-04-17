@@ -1,6 +1,6 @@
 <template>
   <div class="tag-page">
-    <PostList :postList="postList"/>
+    <PostList :postList="$tag.posts"/>
   </div>
 </template>
 
@@ -10,11 +10,6 @@ export default {
   name: 'Tag',
   components: {
     PostList
-  },
-  computed: {
-    postList() {
-      return this.$tag.posts.filter(p => !p.frontmatter.private);
-    }
   }
 };
 </script>

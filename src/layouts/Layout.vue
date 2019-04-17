@@ -1,5 +1,5 @@
 <template>
-  <div class>需要实现页面组件</div>
+  <div>需要实现Layout组件</div>
 </template>
 
 <script>

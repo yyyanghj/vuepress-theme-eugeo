@@ -18,16 +18,16 @@ $ yarn add vuepress-theme-eugeo --dev
 ### themeConfig
 
 ```js
-// config.js
+// .vuepress/config.js
 
-modude.exports = {
+module.exports = {
   // 导航栏上显示的名称
   title: 'Eugeo',
 
   theme: 'eugeo',
 
   themeConfig: {
-    // 日期格式化
+    // 日期显示格式, 格式参考 https://github.com/iamkun/dayjs/blob/dev/docs/en/API-reference.md#displaying
     dataFormat: 'MMM D, YYYY',
 
     // 增加的导航项, icon需要iconfont的svg图标

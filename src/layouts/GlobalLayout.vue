@@ -9,7 +9,7 @@
       </transition>
     </main>
 
-    <TheFooter/>
+    <component :is="theFooter"></component>
 
     <BackToTop :isHidden="isBackToTopHidden"/>
 
@@ -50,6 +50,9 @@ export default {
         return 'NotFound';
       }
       return 'Layout';
+    },
+    theFooter() {
+      return this.$themeConfig.footer || 'TheFooter';
     }
   },
   mounted() {
@@ -61,10 +64,9 @@ export default {
     },
     scrollTop(newVal, oldVal) {
       const isOverstep = newVal >= this.threshold;
-
-      state.isSideBarHidden = true;
       this.isBackToTopHidden = !isOverstep;
-      this.isAppBarHidden = newVal > oldVal && isOverstep;
+      this.isAppBarHidden =
+        newVal > oldVal && isOverstep && state.isSideBarHidden;
     }
   },
   methods: {
@@ -121,22 +123,20 @@ export default {
   }
 
   @media (min-width: $MQNarrow) {
+    padding-left: $sideBarWidth;
+
     .side-bar {
+      padding-top: 0;
+      border-right: 1px dashed $borderColor;
       transform: translateX(0) !important;
     }
 
     .app-bar {
-      opacity: 1 !important;
-      transform: translateY(0) !important;
+      position: relative;
 
       .menu {
         display: none;
       }
-    }
-
-    .main {
-      margin-left: $sideBarWidth;
-      border-left: 1px dashed $borderColor;
     }
   }
 }

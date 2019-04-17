@@ -1,5 +1,5 @@
 <template>
-  <div>需要实现页面组件</div>
+  <div>需要实现Page组件</div>
 </template>
 
 <script>

@@ -10,16 +10,9 @@ module.exports = (opts = {}, ctx) => {
       }
     },
     {
-      permalink: '/posts/',
-      frontmatter: {
-        title: `Posts`,
-        layout: 'Posts'
-      }
-    },
-    {
       permalink: '/archive/',
       frontmatter: {
-        title: `Archives`,
+        title: `Archive`,
         layout: 'Archive'
       }
     }

@@ -122,6 +122,9 @@ export default {
   justify-content: center;
   align-items: center;
   overflow: visible !important;
+  padding: 0 spacer(3);
+  height: 36px;
+  widget();
 
   label {
     display: block;
@@ -135,21 +138,16 @@ export default {
 
   .search-input {
     display: block;
-    width: 0;
-    height: 24px;
+    flex: 1;
+    margin-left: spacer(2);
+    height: 28px;
     outline: none;
     border: none;
-    border-bottom: 1px solid $accentColor;
-    background-color: $bgColor;
+    background: transparent;
     color: inherit;
-    transition: all 300ms ease;
     appearance: none;
 
     &:focus {
-      margin-left: spacer();
-      padding-left: spacer();
-      width: 180px;
-
       & + .suggestions {
         opacity: 1;
       }
@@ -158,7 +156,7 @@ export default {
 
   .suggestions {
     position: absolute;
-    top: 48px;
+    top: 36px;
     left: 50%;
     z-index: 1;
     width: 240px;

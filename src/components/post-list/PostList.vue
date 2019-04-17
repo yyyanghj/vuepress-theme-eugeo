@@ -3,13 +3,7 @@
     <transition-group tag="div" name="fade">
       <PostCard :post="post" v-for="post of currentPosts" :key="post.key"/>
     </transition-group>
-    <Pagination
-      v-if="showPagination"
-      :total="postList.length"
-      :perPage="perPage"
-      @change="handlePageChange"
-      ref="pagination"
-    />
+    <Pagination :total="postList.length" :perPage="perPage" @change="handlePageChange" ref="pagination"/>
   </section>
 </template>
 
@@ -27,10 +21,6 @@ export default {
     postList: {
       type: Array,
       default: () => []
-    },
-    showPagination: {
-      type: Boolean,
-      default: true
     }
   },
   data: () => ({
@@ -76,9 +66,7 @@ export default {
     }
 
     &-leave-active {
-      position: absolute;
-      width: 100%;
-      opacity: 0;
+      display: none;
     }
   }
 }

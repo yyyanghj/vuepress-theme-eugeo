@@ -13,12 +13,10 @@ export default ({ Vue }) => {
             orderB++;
           }
 
-          return orderA > orderB ? -1 : 1;
+          return orderB - orderA;
         };
 
-        return pages
-          .filter(p => p.type === 'post' && !p.frontmatter.private)
-          .sort(sort);
+        return pages.filter(p => p.type === 'post').sort(sort);
       },
       $prev() {
         if (this.$page.type !== 'post') {

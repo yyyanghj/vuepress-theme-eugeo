@@ -1,7 +1,7 @@
 <template>
   <section class="post-info">
-    <router-link class="item" to="/posts/">
-      <h4 class="label">Posts</h4>
+    <router-link class="item" to="/archive/">
+      <h4 class="label">Archive</h4>
       <span class="text">{{ $posts.length }}</span>
     </router-link>
 

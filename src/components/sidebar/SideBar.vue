@@ -1,23 +1,26 @@
 <template>
   <aside class="side-bar" :class="{ hidden: isHidden }">
+    <SearchBox/>
     <Profile/>
     <PostInfo/>
-    <SideNav/>
+    <Navigation/>
   </aside>
 </template>
 
 <script>
 import state from '@eugeo/store/';
+import SearchBox from './SearchBox';
 import Profile from './Profile';
 import PostInfo from './PostInfo';
-import SideNav from './SideNav';
+import Navigation from '../Navigation';
 
 export default {
   name: 'SideBar',
   components: {
     Profile,
     PostInfo,
-    SideNav
+    SearchBox,
+    Navigation
   },
   props: {
     isHidden: {
@@ -36,7 +39,7 @@ export default {
   z-index: 16;
   overflow-y: auto;
   padding-top: $appBarHeight;
-  padding-bottom: 64px;
+  // padding-bottom: 64px;
   width: $sideBarWidth;
   height: 100vh;
   background-color: $bgColor;
@@ -51,12 +54,23 @@ export default {
     display: none;
   }
 
-  .profile, .post-info, .side-nav {
-    margin: spacer();
+  .profile, .post-info, .nav, .search-box {
+    margin: spacer(2) spacer();
   }
 
-  .profile {
-    margin-top: spacer(2);
+  .search-box {
+    margin-top: spacer(1.5);
+  }
+
+  .nav {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  @media (min-width: $MQMobile) {
+    .nav {
+      display: none;
+    }
   }
 }
 </style>

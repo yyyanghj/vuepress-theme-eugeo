@@ -23,13 +23,12 @@ export default {
 
 <style lang="stylus" scoped>
 .footer {
-  position: relative;
-  z-index: 16;
+  // position: relative;
+  // z-index: 16;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 100%;
   height: 64px;
   background-color: $widgetBgColor;
   text-align: center;
