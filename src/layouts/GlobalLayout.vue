@@ -43,16 +43,21 @@ export default {
   computed: {
     layout() {
       const layout = this.$frontmatter.layout;
+
       if (layout) {
         return layout;
       }
+
       if (!this.$page.path) {
         return 'NotFound';
       }
+
       return 'Layout';
     },
     theFooter() {
-      return this.$themeConfig.footer || 'TheFooter';
+      return (
+        this.$frontmatter.footer || this.$themeConfig.footer || 'TheFooter'
+      );
     }
   },
   mounted() {
@@ -91,14 +96,12 @@ export default {
   .main {
     flex: 1;
     overflow: hidden;
-    margin-left: 0px;
-    padding-top: $appBarHeight + spacer(2);
-    transition: all 450ms ease;
+    margin-top: $appBarHeight;
+    padding: spacer(3) 0;
   }
 
   .container {
     margin: 0 auto;
-    padding-bottom: spacer(3);
   }
 
   .side-mask {
@@ -129,6 +132,10 @@ export default {
       padding-top: 0;
       border-right: 1px dashed $borderColor;
       transform: translateX(0) !important;
+    }
+
+    .main {
+      margin-top: 0;
     }
 
     .app-bar {
