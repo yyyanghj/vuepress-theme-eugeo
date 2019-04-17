@@ -7,7 +7,7 @@ module.exports = {
   theme: resolve('../../src'),
   description: `A theme for VuePress`,
   head: [['link', { rel: 'icon', href: '/favicon.ico' }]],
-  base: '/vuepress-theme-eugeo',
+  base: '/vuepress-theme-eugeo/',
   host: '192.168.101.33',
   markdown: {
     lineNumbers: true

@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "vuepress dev docs",
     "build": "vuepress build docs",
+    "deploy": "bash deploy.sh",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -42,6 +43,7 @@
     "markdown-it-task-lists": "^2.1.1",
     "style-resources-loader": "^1.2.1",
     "vue-lazyload": "^1.2.6",
+    "vuepress-plugin-permalink-pinyin": "^1.0.0",
     "vuepress-plugin-reading-time": "^0.1.1",
     "vuepress-plugin-smooth-scroll": "^0.0.3"
   }
