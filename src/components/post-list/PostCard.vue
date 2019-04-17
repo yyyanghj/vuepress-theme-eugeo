@@ -66,7 +66,7 @@ export default {
     },
     go(type, name) {
       this.$router.push({
-        path: this.$withBase(`/${type}/${name}`)
+        path: `/${type}/${name}`
       });
     }
   },

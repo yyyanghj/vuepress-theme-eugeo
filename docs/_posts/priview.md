@@ -3,7 +3,6 @@ title: markdown样式预览
 date: 2019-04-13
 tags:
   - markdown
-  - eugeo
 category: eugeo
 banner: https://i.loli.net/2019/04/13/5cb15dac58eeb.jpg
 ---

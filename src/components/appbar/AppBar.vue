@@ -1,7 +1,7 @@
 <template>
   <header class="app-bar" :class="{hidden: isHidden}">
     <Menu/>
-    <router-link tag="h1" class="title" :to="$withBase('/')">{{$siteTitle}}</router-link>
+    <router-link tag="h1" class="title" to="/">{{$siteTitle}}</router-link>
     <span class="spacer"></span>
     <Navigation/>
     <themeSwitch/>

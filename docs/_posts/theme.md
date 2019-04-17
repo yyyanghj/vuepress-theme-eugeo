@@ -3,7 +3,6 @@ title: 主题配置说明
 date: 2019-03-27
 category: eugeo
 tags:
-  - eugeo
   - doc
   - VuePress
 banner: https://i.loli.net/2019/04/13/5cb15fba0fbae.jpg

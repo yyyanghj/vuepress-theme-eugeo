@@ -13,7 +13,7 @@
       <use xlink:href="#s-text" class="text"></use>
       <use xlink:href="#s-text" class="text"></use>
     </svg>
-    <router-link :to="$withBase('/')">o(ﾟДﾟ)っ Take Me Home</router-link>
+    <router-link to="/">o(ﾟДﾟ)っ Take Me Home</router-link>
   </section>
 </template>
 
