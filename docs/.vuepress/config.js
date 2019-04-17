@@ -5,9 +5,9 @@ const resolve = dir => path.resolve(__dirname, dir);
 module.exports = {
   title: 'Eugeo',
   theme: resolve('../../src'),
-  description: `Coolyang's blog`,
+  description: `A theme for VuePress`,
   head: [['link', { rel: 'icon', href: '/favicon.ico' }]],
-  base: '/',
+  base: '/vuepress-theme-eugeo',
   host: '192.168.101.33',
   markdown: {
     lineNumbers: true
@@ -32,15 +32,7 @@ module.exports = {
       // weibo: 'https://weibo.com/2213684753/profile'
     },
 
-    // comments: false,
-    comments: {
-      platform: 'github',
-      owner: 'Coolyang1996',
-      repo: 'coolyang1996.github.io',
-      clientId: '550c4b7f46b1b0808039',
-      clientSecret: '733c6899ecd6469effdcc32036e9178456419060',
-      autoCreatIssue: process.env.NODE_ENV !== 'development'
-    },
+    comments: false,
 
     copyright: {
       author: 'Coolyang'
