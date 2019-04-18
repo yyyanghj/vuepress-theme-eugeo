@@ -26,11 +26,11 @@ export default {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: $widgetBgColor;
+  // background-color: $widgetBgColor;
   text-align: center;
   font(14px);
-  shadow();
 
+  // shadow();
   p {
     margin-top: spacer();
   }

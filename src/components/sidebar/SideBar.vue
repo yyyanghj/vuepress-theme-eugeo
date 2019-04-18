@@ -67,6 +67,7 @@ export default {
   .nav {
     flex: 1;
     flex-direction: column;
+    justify-content: flex-start;
     align-items: stretch;
   }
 

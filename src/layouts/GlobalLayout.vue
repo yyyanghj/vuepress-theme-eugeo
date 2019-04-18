@@ -143,14 +143,13 @@ export default {
     }
 
     .side-bar {
-      padding-top: $appBarHeight;
+      border-right: 1px dashed $borderColor;
       background: transparent;
       transform: translateX(0) !important;
     }
 
     .main {
       margin-left: $sideBarWidth;
-      border-left: 1px dashed $borderColor;
     }
   }
 }
