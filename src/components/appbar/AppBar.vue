@@ -48,7 +48,6 @@ export default {
   opacity: 1;
   transition: transform 450ms ease, opacity 150ms ease;
 
-  // shadow();
   &.hidden {
     opacity: 0.5;
     transform: translateY(-110%);

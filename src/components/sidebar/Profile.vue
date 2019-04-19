@@ -22,6 +22,23 @@
         <span class="tip">{{ name }}</span>
       </a>
     </div>
+
+    <div class="post-info">
+      <router-link class="item" to="/archive/">
+        <h4 class="label">Archive</h4>
+        <span class="text">{{ $posts.length }}</span>
+      </router-link>
+
+      <router-link class="item" to="/category/">
+        <h4 class="label">Categories</h4>
+        <span class="text">{{ Object.keys($categories._metaMap).length }}</span>
+      </router-link>
+
+      <router-link class="item" to="/tag/">
+        <h4 class="label">Tags</h4>
+        <span class="text">{{ Object.keys($tags._metaMap).length }}</span>
+      </router-link>
+    </div>
   </section>
 </template>
 
@@ -41,7 +58,7 @@ export default {
 
 <style lang="stylus" scoped>
 .profile {
-  padding: spacer(2) spacer(3);
+  padding: spacer(2);
   text-align: center;
   widget();
 
@@ -124,6 +141,27 @@ export default {
           display: block;
         }
       }
+    }
+  }
+
+  .post-info {
+    display: flex;
+    justify-content: space-between;
+    margin-top: spacer(1.5);
+    text-align: center;
+
+    .item {
+      display: block;
+      flex: 1;
+    }
+
+    .label {
+      font(14px);
+      margin-bottom: spacer(0.5);
+    }
+
+    .text {
+      font(16px);
     }
   }
 }

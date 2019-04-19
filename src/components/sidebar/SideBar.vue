@@ -2,7 +2,6 @@
   <aside class="side-bar" :class="{ hidden: isHidden }">
     <SearchBox/>
     <Profile/>
-    <PostInfo/>
     <Navigation/>
   </aside>
 </template>
@@ -11,14 +10,12 @@
 import state from '@eugeo/store/';
 import SearchBox from './SearchBox';
 import Profile from './Profile';
-import PostInfo from './PostInfo';
 import Navigation from '../Navigation';
 
 export default {
   name: 'SideBar',
   components: {
     Profile,
-    PostInfo,
     SearchBox,
     Navigation
   },
@@ -55,9 +52,9 @@ export default {
     display: none;
   }
 
-  .profile, .post-info, .nav, .search-box {
+  .profile, .nav {
     flex-shrink: 0;
-    margin: spacer();
+    margin-top: spacer(2);
   }
 
   .search-box {

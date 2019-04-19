@@ -13,7 +13,7 @@
 
     <BackToTop :isHidden="isBackToTopHidden"/>
 
-    <div v-show="!state.isSideBarHidden" class="mask" @click.stop="closeSideBar" @touchmove.prevent="void 0"></div>
+    <!-- <div v-show="!state.isSideBarHidden" class="mask" @click.stop="closeSideBar" @touchmove.prevent="void 0"></div> -->
   </div>
 </template>
 
@@ -118,7 +118,7 @@ export default {
     z-index: 10;
     width: 100%;
     height: 100%;
-    background-color: rgba($black, 0.5);
+    background-color: rgba(53, 73, 94, 0.5);
     backdrop-filter: blur(5px);
   }
 
