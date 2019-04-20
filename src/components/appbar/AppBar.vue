@@ -36,17 +36,16 @@ export default {
 .app-bar {
   position: fixed;
   top: 0;
-  left: 0;
-  z-index: 16;
+  z-index: 6;
   display: flex;
   align-items: center;
   padding: 0 spacer(3);
-  width: 100%;
+  width: inherit;
   height: $appBarHeight;
   border-bottom: 1px solid $borderColor;
   background-color: $widgetBgColor;
   opacity: 1;
-  transition: transform 450ms ease, opacity 150ms ease;
+  transition: transform 450ms ease, opacity 150ms;
 
   &.hidden {
     opacity: 0.5;

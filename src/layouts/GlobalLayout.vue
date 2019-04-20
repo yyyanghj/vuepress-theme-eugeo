@@ -1,19 +1,15 @@
 <template>
   <div class="theme-container">
-    <AppBar :isHidden="isAppBarHidden"/>
-
     <SideBar :isHidden="state.isSideBarHidden"/>
     <main class="main">
+      <AppBar :isHidden="isAppBarHidden"/>
       <transition appear name="fade" mode="out-in">
         <component :is="layout" class="container" :key="$route.path"></component>
       </transition>
+      <component :is="footerBar" class="footer"></component>
     </main>
 
-    <component :is="footerBar" class="footer"></component>
-
     <BackToTop :isHidden="isBackToTopHidden"/>
-
-    <!-- <div v-show="!state.isSideBarHidden" class="mask" @click.stop="closeSideBar" @touchmove.prevent="void 0"></div> -->
   </div>
 </template>
 
@@ -88,38 +84,41 @@ export default {
 
 <style lang="stylus">
 .theme-container {
-  display: flex;
-  flex-direction: column;
   overflow: hidden;
-  margin: 0 auto;
-  min-height: 100vh;
 
   .main {
-    flex: 1;
-    overflow: hidden;
-    margin-top: $appBarHeight;
-    padding: spacer(3) 0;
-  }
-
-  .container {
-    margin: 0 auto;
-  }
-
-  .footer {
     position: relative;
-    z-index: 8;
-    min-height: 88px;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    padding-top: $appBarHeight;
+    min-height: 100vh;
+    width: 100vw;
+    transition: all 450ms ease;
+
+    .container {
+      flex: 1;
+      margin: spacer(3) auto;
+      width: 100%;
+    }
+
+    .footer {
+      min-height: 88px;
+    }
   }
 
-  .mask {
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 10;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(53, 73, 94, 0.5);
-    backdrop-filter: blur(5px);
+  .side-bar {
+    &:not(.hidden) + .main {
+      left: $sideBarWidth;
+    }
+
+    @media (min-width: $MQNarrow) {
+      border-right: 1px dashed $borderColor;
+
+      &:not(.hidden) + .main {
+        width: 'calc(100vw - %s )' % $sideBarWidth;
+      }
+    }
   }
 
   .fade {
@@ -129,27 +128,6 @@ export default {
 
     &-leave-active {
       animation: fade 450ms ease-in-out reverse;
-    }
-  }
-
-  @media (min-width: $MQNarrow) {
-    .app-bar {
-      opacity: 1 !important;
-      transform: translateY(0) !important;
-
-      .menu {
-        display: none;
-      }
-    }
-
-    .side-bar {
-      border-right: 1px dashed $borderColor;
-      background: transparent;
-      transform: translateX(0) !important;
-    }
-
-    .main {
-      margin-left: $sideBarWidth;
     }
   }
 }

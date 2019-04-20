@@ -1,7 +1,8 @@
 <template>
   <aside class="side-bar" :class="{ hidden: isHidden }">
-    <SearchBox/>
     <Profile/>
+    <SearchBox/>
+
     <Navigation/>
   </aside>
 </template>
@@ -37,7 +38,6 @@ export default {
   display: flex;
   flex-direction: column;
   overflow-y: auto;
-  padding-top: $appBarHeight;
   width: $sideBarWidth;
   height: 100vh;
   background-color: $bgColor;
@@ -52,13 +52,13 @@ export default {
     display: none;
   }
 
-  .profile, .nav {
+  .search-box, .nav {
     flex-shrink: 0;
     margin-top: spacer(2);
   }
 
   .search-box {
-    margin-top: spacer(1.5);
+    // margin-top: spacer(1.5);
   }
 
   .nav {
