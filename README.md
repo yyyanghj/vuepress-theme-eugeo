@@ -1,7 +1,6 @@
 # vuepress-theme-eugeo
 
 A theme for Vuepress
-[demo](https://coolyang.xyz/)
 
 ## Installation
 
@@ -15,4 +14,4 @@ $ yarn add vuepress-theme-eugeo --dev
 
 ## Docs
 
-[http://coolyang.xyz/vuepress-theme-eugeo/](http://coolyang.xyz/vuepress-theme-eugeo/)
+[https://yyyang1996.github.io/vuepress-theme-eugeo/](https://yyyang1996.github.io/vuepress-theme-eugeo/)
