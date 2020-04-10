@@ -2,14 +2,14 @@
   <div class="post">
     <transition appear name="zoomIn">
       <article class="article">
-        <PostHeader/>
-        <Content/>
-        <PostFooter/>
+        <PostHeader />
+        <Content />
+        <PostFooter />
       </article>
     </transition>
 
     <section class="comment" v-if="useVssue">
-      <Vssue :title="vssueTitle" :issue-id="vssueId"/>
+      <Vssue :title="vssueTitle" :issue-id="vssueId" />
     </section>
   </div>
 </template>
@@ -54,11 +54,11 @@ export default {
     border-radius: 0 0 $baseRadius $baseRadius;
   }
 
-  .content, .post-footer {
+  .content__default, .post-footer {
     margin: 0 spacer(6);
   }
 
-  .content {
+  .content__default {
     margin-top: spacer(3);
   }
 
@@ -74,7 +74,7 @@ export default {
   }
 
   @media (max-width: $MQMobile) {
-    .content, .post-footer {
+    .content__default, .post-footer {
       margin: 0 spacer(2);
     }
   }

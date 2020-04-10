@@ -1,13 +1,13 @@
 <template>
-  <header class="app-bar" :class="{hidden: isHidden}">
-    <Menu/>
+  <header class="app-bar" :class="{ hidden: isHidden }">
+    <Menu />
     <router-link class="home-link" to="/">
-      <img class="logo" v-if="$themeConfig.logo" :src="$withBase($themeConfig.logo)" alt="logo">
-      <h1 class="title">{{$siteTitle}}</h1>
+      <img class="logo" v-if="$themeConfig.logo" :src="$withBase($themeConfig.logo)" alt="logo" />
+      <h1 class="title">{{ $siteTitle }}</h1>
     </router-link>
     <span class="spacer"></span>
-    <Navigation/>
-    <themeSwitch/>
+    <Navigation />
+    <themeSwitch />
   </header>
 </template>
 

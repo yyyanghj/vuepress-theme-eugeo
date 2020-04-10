@@ -1,6 +1,6 @@
 <template>
   <section class="profile" v-if="profile">
-    <img :src="profile.avatar" alt="avatar" class="avatar">
+    <img :src="profile.avatar" alt="avatar" class="avatar" />
 
     <h3 v-if="profile.nickname" class="nickname">{{ profile.nickname }}</h3>
 
@@ -17,7 +17,14 @@
     </div>
 
     <div class="sns">
-      <a :href="link" class="item" v-for="(link, name) in sns" :key="name" target="_blank" rel="noopener noreferrer">
+      <a
+        :href="link"
+        class="item"
+        v-for="(link, name) in sns"
+        :key="name"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
         <v-icon class="icon" :name="name"></v-icon>
         <span class="tip">{{ name }}</span>
       </a>
@@ -31,12 +38,12 @@
 
       <router-link class="item" to="/category/">
         <h4 class="label">Categories</h4>
-        <span class="text">{{ Object.keys($categories._metaMap).length }}</span>
+        <span class="text">{{ Object.keys($category._metaMap).length }}</span>
       </router-link>
 
       <router-link class="item" to="/tag/">
         <h4 class="label">Tags</h4>
-        <span class="text">{{ Object.keys($tags._metaMap).length }}</span>
+        <span class="text">{{ Object.keys($tag._metaMap).length }}</span>
       </router-link>
     </div>
   </section>

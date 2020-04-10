@@ -8,9 +8,10 @@
           :count="map.posts.length"
           :to="map.path"
           class="tag-item"
-          v-for="(map, name) of $tags._metaMap"
+          v-for="(map, name) of $tag._metaMap"
           :key="name"
-        >{{name}}</router-link>
+          >{{ name }}</router-link
+        >
       </ul>
     </section>
   </div>

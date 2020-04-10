@@ -25,7 +25,7 @@ module.exports = {
 
   themeConfig: {
     // 日期显示格式, 格式参考 https://github.com/iamkun/dayjs/blob/dev/docs/en/API-reference.md#displaying
-    dataFormat: 'MMM D, YYYY',
+    formatDate: 'MMM D, YYYY',
 
     // logo
     logo: '/img/coolyang.jpg',
@@ -104,35 +104,43 @@ module.exports = {
 
 ```md
 ---
+
 <!-- 标题 -->
+
 title: 主题配置说明
 
 <!-- 发布时间 -->
+
 date: 2019-01-15
 
 <!-- 标签 -->
+
 tags:
-  - MVVM
-  - Vue
+
+- MVVM
+- Vue
 
 <!-- 分类 -->
+
 category: 前端
 
 <!-- 封面图片, 也可以用数组语法 -->
+
 banner: '/img/2.jpg'
 
 <!-- 版权声明, 默认为false禁用, 也可以使用对象语法覆盖全局配置 -->
+
 copyright: true
 
 <!-- 打赏, 默认为false禁用 -->
+
 reward: true
 
 <!-- 底部 footer 组件名 -->
+
 footer: TheFooter
 
----
-
-一段文章摘要, 在 `frontmatter` 和 `<!-- more -->` 之间的内容即为摘要
+---一段文章摘要, 在 `frontmatter` 和 `<!-- more -->` 之间的内容即为摘要
 会在 postCard 卡片中渲染. 剩下的内容只有进入页面才会渲染
 
 <!-- more -->

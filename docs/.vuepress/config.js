@@ -7,13 +7,12 @@ module.exports = {
   theme: resolve('../../src'),
   description: `A theme for VuePress`,
   head: [['link', { rel: 'icon', href: '/favicon.ico' }]],
-  base: '/vuepress-theme-eugeo/',
-  host: '192.168.101.33',
+  // base: '/vuepress-theme-eugeo/',
   markdown: {
     lineNumbers: true
   },
   themeConfig: {
-    dataFormat: 'MMM D, YYYY',
+    formatDate: 'MMM D, YYYY',
 
     nav: [
       { link: '/', text: 'Home', icon: 'home', exact: true },

@@ -1,11 +1,17 @@
 <template>
   <div class="archive-page">
     <section class="timeline">
-      <div class="line" v-for="(posts, year) of archiveMap" :key="year">
+      <div :key="year" class="line" v-for="(posts, year) of archiveMap">
         <h3 class="year">{{year}}</h3>
         <ul>
-          <router-link tag="li" :to="post.path" class="post" v-for="post of posts" :key="post.key">
-            <span class="date">{{post.frontmatter.date | dateFormat}}</span>
+          <router-link
+            :key="post.key"
+            :to="post.path"
+            class="post"
+            tag="li"
+            v-for="post of posts"
+          >
+            <span class="date">{{post.frontmatter.date | formatDate}}</span>
             <span class="title">{{post.title}}</span>
           </router-link>
         </ul>
@@ -40,7 +46,7 @@ export default {
     }
   },
   filters: {
-    dateFormat(date) {
+    formatDate(date) {
       return dayjs(date).format('MMM D');
     }
   }

@@ -1,6 +1,6 @@
 import { ripple } from './directives/';
 import VueLazyload from 'vue-lazyload';
-
+import dayjs from 'dayjs';
 /* import '@eugeo/assets/font/iconfont.js'; */
 export default ({
   Vue, // VuePress 正在使用的 Vue 构造函数
@@ -12,4 +12,37 @@ export default ({
   // Vue.use(Vuetify);
   Vue.directive('ripple', ripple);
   Vue.use(VueLazyload);
+
+  const { pages } = siteData;
+  const posts = pages
+    .filter(p => p.id === 'post')
+    .sort((a, b) => {
+      return dayjs(a.frontmatter.date).isAfter(dayjs(b.frontmatter.date)) ? -1 : 1;
+    });
+
+  Vue.mixin({
+    computed: {
+      $posts() {
+        return posts;
+      },
+      $prev() {
+        if (this.$page.type !== 'post') {
+          return null;
+        }
+        const index = this.$posts.findIndex(post => {
+          return this.$page.key === post.key;
+        });
+        return this.$posts[index + 1] || null;
+      },
+      $next() {
+        if (this.$page.type !== 'post') {
+          return null;
+        }
+        const index = this.$posts.findIndex(post => {
+          return this.$page.key === post.key;
+        });
+        return this.$posts[index - 1] || null;
+      }
+    }
+  });
 };

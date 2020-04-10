@@ -1,15 +1,19 @@
 <template>
   <div class="theme-container">
-    <SideBar :isHidden="state.isSideBarHidden"/>
+    <SideBar :isHidden="state.isSideBarHidden" />
     <main class="main">
-      <AppBar :isHidden="isAppBarHidden"/>
+      <AppBar :isHidden="isAppBarHidden" />
       <transition appear name="fade" mode="out-in">
-        <component :is="layout" class="container" :key="$route.path"></component>
+        <div class="container" :key="$route.path">
+          <DefaultGlobalLayout />
+        </div>
+
+        <!-- <component :is="layout" class="container" :key="$route.path"></component> -->
       </transition>
       <component :is="footerBar" class="footer"></component>
     </main>
 
-    <BackToTop :isHidden="isBackToTopHidden"/>
+    <BackToTop :isHidden="isBackToTopHidden" />
   </div>
 </template>
 
@@ -20,6 +24,7 @@ import AppBar from '../components/appbar/AppBar';
 import SideBar from '../components/SideBar/SideBar';
 import BackToTop from '../components/BackToTop';
 import FooterBar from '../components/FooterBar';
+import DefaultGlobalLayout from '@app/components/GlobalLayout';
 
 export default {
   name: 'GlobalLayout',
@@ -27,7 +32,8 @@ export default {
     AppBar,
     SideBar,
     BackToTop,
-    FooterBar
+    FooterBar,
+    DefaultGlobalLayout
   },
   data: () => ({
     state,
@@ -52,9 +58,7 @@ export default {
     },
 
     footerBar() {
-      return (
-        this.$frontmatter.footer || this.$themeConfig.footer || 'FooterBar'
-      );
+      return this.$frontmatter.footer || this.$themeConfig.footer || 'FooterBar';
     }
   },
   mounted() {
@@ -67,8 +71,7 @@ export default {
     scrollTop(newVal, oldVal) {
       const isOverstep = newVal >= this.threshold;
       this.isBackToTopHidden = !isOverstep;
-      this.isAppBarHidden =
-        newVal > oldVal && isOverstep && state.isSideBarHidden;
+      this.isAppBarHidden = newVal > oldVal && isOverstep && state.isSideBarHidden;
     }
   },
   methods: {
@@ -100,6 +103,11 @@ export default {
       flex: 1;
       margin: spacer(3) auto;
       width: 100%;
+
+      & > * {
+        margin-left auto;
+        margin-right auto;
+      }
     }
 
     .footer {

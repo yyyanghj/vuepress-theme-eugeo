@@ -1,15 +1,15 @@
 <template>
   <header class="post-header">
-    <section v-if="image" class="banner">
+    <section class="banner" v-if="image">
       <v-loading></v-loading>
-      <img class="image" :src="image">
+      <img :src="image" class="image" />
     </section>
 
-    <transition name="fade" appear>
+    <transition appear name="fade">
       <section class="meta">
         <h1 class="title">{{ title }}</h1>
         <div class="time">
-          {{ $frontmatter.date | dateFormat($themeConfig.dataFormat) }}
+          {{ $frontmatter.date | formatDate($themeConfig.formatDate) }}
           &nbsp;/&nbsp;
           {{ readingTime }} min read
         </div>
@@ -36,7 +36,7 @@ export default {
     }
   },
   filters: {
-    dateFormat(val, format = 'MMM D, YYYY') {
+    formatDate(val, format = 'MMM D, YYYY') {
       return dayjs(val).format(format);
     }
   }

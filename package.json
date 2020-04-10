@@ -24,20 +24,20 @@
   },
   "homepage": "https://github.com/Coolyang1996/vuepress-theme-eugeo#readme",
   "devDependencies": {
-    "eslint-plugin-vue": "^5.2.2",
-    "vuepress": "^1.0.0-alpha.47"
+    "eslint-plugin-vue": "^6.2.2",
+    "vuepress": "^1.4.0"
   },
   "peerDependencies": {
-    "vuepress": "^1.0.0-alpha.47"
+    "vuepress": "^1.4.0"
   },
   "dependencies": {
-    "@vssue/vuepress-plugin-vssue": "^0.8.2",
+    "@vssue/vuepress-plugin-vssue": "^1.4.3",
     "@vuepress/plugin-active-header-links": "^1.0.0-alpha.47",
-    "@vuepress/plugin-blog": "^1.0.0-alpha.47",
-    "@vuepress/plugin-container": "^1.0.0-alpha.44",
-    "@vuepress/plugin-last-updated": "^1.0.0-alpha.47",
-    "@vuepress/plugin-medium-zoom": "^1.0.0-alpha.47",
-    "@vuepress/plugin-nprogress": "^1.0.0-alpha.47",
+    "@vuepress/plugin-blog": "^1.9.2",
+    "@vuepress/plugin-container": "^1.0.0-alpha.41",
+    "@vuepress/plugin-last-updated": "^1.4.0",
+    "@vuepress/plugin-medium-zoom": "^1.4.0",
+    "@vuepress/plugin-nprogress": "^1.4.0",
     "dayjs": "^1.8.12",
     "lodash": "^4.17.11",
     "markdown-it-task-lists": "^2.1.1",
@@ -45,6 +45,6 @@
     "vue-lazyload": "^1.2.6",
     "vuepress-plugin-permalink-pinyin": "^1.0.0",
     "vuepress-plugin-reading-time": "^0.1.1",
-    "vuepress-plugin-smooth-scroll": "^0.0.3"
+    "vuepress-plugin-smooth-scroll": "^0.0.9"
   }
 }
