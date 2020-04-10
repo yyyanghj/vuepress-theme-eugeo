@@ -3,12 +3,10 @@
     <SideBar :isHidden="state.isSideBarHidden" />
     <main class="main">
       <AppBar :isHidden="isAppBarHidden" />
-      <transition appear name="fade" mode="out-in">
-        <div class="container" :key="$route.path">
+      <transition appear mode="out-in" name="fade">
+        <div :key="$route.path" class="container">
           <DefaultGlobalLayout />
         </div>
-
-        <!-- <component :is="layout" class="container" :key="$route.path"></component> -->
       </transition>
       <component :is="footerBar" class="footer"></component>
     </main>
@@ -21,7 +19,7 @@
 import throttle from 'lodash/throttle';
 import state from '@eugeo/store/';
 import AppBar from '../components/appbar/AppBar';
-import SideBar from '../components/SideBar/SideBar';
+import SideBar from '../components/sideBar/SideBar';
 import BackToTop from '../components/BackToTop';
 import FooterBar from '../components/FooterBar';
 import DefaultGlobalLayout from '@app/components/GlobalLayout';
@@ -105,8 +103,8 @@ export default {
       width: 100%;
 
       & > * {
-        margin-left auto;
-        margin-right auto;
+        margin-right: auto;
+        margin-left: auto;
       }
     }
 
