@@ -1,8 +1,13 @@
 <template>
-  <header class="app-bar" :class="{ hidden: isHidden }">
+  <header :class="{ hidden: isHidden }" class="app-bar">
     <Menu />
     <router-link class="home-link" to="/">
-      <img class="logo" v-if="$themeConfig.logo" :src="$withBase($themeConfig.logo)" alt="logo" />
+      <img
+        :src="$withBase($themeConfig.logo)"
+        alt="logo"
+        class="logo"
+        v-if="$themeConfig.logo"
+      />
       <h1 class="title">{{ $siteTitle }}</h1>
     </router-link>
     <span class="spacer"></span>
@@ -13,7 +18,7 @@
 
 <script>
 import Menu from './Menu';
-import themeSwitch from './themeSwitch';
+import themeSwitch from './ThemeSwitch';
 import Navigation from '../Navigation';
 
 export default {
