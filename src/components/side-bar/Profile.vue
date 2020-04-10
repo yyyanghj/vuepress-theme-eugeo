@@ -1,10 +1,10 @@
 <template>
   <section class="profile" v-if="profile">
-    <img :src="profile.avatar" alt="avatar" class="avatar" />
+    <img :src="$withBase(profile.avatar)" alt="avatar" class="avatar" />
 
-    <h3 v-if="profile.nickname" class="nickname">{{ profile.nickname }}</h3>
+    <h3 class="nickname" v-if="profile.nickname">{{ profile.nickname }}</h3>
 
-    <div v-if="profile.bio" class="bio">{{ profile.bio }}</div>
+    <div class="bio" v-if="profile.bio">{{ profile.bio }}</div>
 
     <div class="location" v-if="profile.location">
       <v-icon name="location"></v-icon>
@@ -19,13 +19,13 @@
     <div class="sns">
       <a
         :href="link"
-        class="item"
-        v-for="(link, name) in sns"
         :key="name"
-        target="_blank"
+        class="item"
         rel="noopener noreferrer"
+        target="_blank"
+        v-for="(link, name) in sns"
       >
-        <v-icon class="icon" :name="name"></v-icon>
+        <v-icon :name="name" class="icon"></v-icon>
         <span class="tip">{{ name }}</span>
       </a>
     </div>
