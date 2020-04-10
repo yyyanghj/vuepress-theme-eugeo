@@ -20,7 +20,16 @@ export default ({
       return dayjs(a.frontmatter.date).isAfter(dayjs(b.frontmatter.date)) ? -1 : 1;
     });
 
+  const store = Vue.observable({
+    isSideBarHidden: true
+  });
+
   Vue.mixin({
+    data() {
+      return {
+        store
+      };
+    },
     computed: {
       $posts() {
         return posts;

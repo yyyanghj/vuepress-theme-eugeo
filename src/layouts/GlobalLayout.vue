@@ -1,6 +1,6 @@
 <template>
   <div class="theme-container">
-    <SideBar :isHidden="state.isSideBarHidden" />
+    <SideBar :isHidden="store.isSideBarHidden" />
     <main class="main">
       <AppBar :isHidden="isAppBarHidden" />
       <transition appear mode="out-in" name="fade">
@@ -17,9 +17,8 @@
 
 <script>
 import throttle from 'lodash/throttle';
-import state from '@eugeo/store/';
 import AppBar from '../components/appbar/AppBar';
-import SideBar from '../components/sideBar/SideBar';
+import SideBar from '../components/side-bar/SideBar';
 import BackToTop from '../components/BackToTop';
 import FooterBar from '../components/FooterBar';
 import DefaultGlobalLayout from '@app/components/GlobalLayout';
@@ -34,7 +33,6 @@ export default {
     DefaultGlobalLayout
   },
   data: () => ({
-    state,
     scrollTop: 0,
     isAppBarHidden: false,
     isBackToTopHidden: true,
@@ -64,17 +62,17 @@ export default {
   },
   watch: {
     $route() {
-      state.isSideBarHidden = true;
+      this.store.isSideBarHidden = true;
     },
     scrollTop(newVal, oldVal) {
       const isOverstep = newVal >= this.threshold;
       this.isBackToTopHidden = !isOverstep;
-      this.isAppBarHidden = newVal > oldVal && isOverstep && state.isSideBarHidden;
+      this.isAppBarHidden = newVal > oldVal && isOverstep && this.store.isSideBarHidden;
     }
   },
   methods: {
     closeSideBar() {
-      state.isSideBarHidden = true;
+      this.store.isSideBarHidden = true;
     },
     handleScroll() {
       this.scrollTop = window.pageYOffset || document.documentElement.scrollTop;

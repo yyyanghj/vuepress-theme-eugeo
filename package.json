@@ -42,6 +42,7 @@
     "lodash": "^4.17.11",
     "markdown-it-task-lists": "^2.1.1",
     "style-resources-loader": "^1.2.1",
+    "vue": "^2.6.11",
     "vue-lazyload": "^1.2.6",
     "vuepress-plugin-permalink-pinyin": "^1.0.0",
     "vuepress-plugin-reading-time": "^0.1.1",

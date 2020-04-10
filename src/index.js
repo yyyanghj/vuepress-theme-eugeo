@@ -90,7 +90,8 @@ module.exports = (opts, ctx) => {
       '@vuepress/last-updated',
       '@vuepress/active-header-links',
       ['@vuepress/blog', defaultBlogPluginOptions],
-      ['@vssue/vssue', comments][('@vuepress/container', { type: 'tip' })],
+      ['@vssue/vssue', comments],
+      [('@vuepress/container', { type: 'tip' })],
       ['@vuepress/container', { type: 'warning' }],
       ['@vuepress/container', { type: 'danger' }]
     ],

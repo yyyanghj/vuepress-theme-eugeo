@@ -1,14 +1,13 @@
 <template>
   <aside class="side-bar" :class="{ hidden: isHidden }">
-    <Profile/>
-    <SearchBox/>
+    <Profile />
+    <SearchBox />
 
-    <Navigation/>
+    <Navigation />
   </aside>
 </template>
 
 <script>
-import state from '@eugeo/store/';
 import SearchBox from './SearchBox';
 import Profile from './Profile';
 import Navigation from '../Navigation';

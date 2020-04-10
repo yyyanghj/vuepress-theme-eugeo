@@ -1,5 +1,5 @@
 <template>
-  <div :class="{close: !state.isSideBarHidden}" class="menu" @click="handleMenuClick">
+  <div :class="{ close: !store.isSideBarHidden }" class="menu" @click="handleMenuClick">
     <span class="hamburger"></span>
     <span class="hamburger"></span>
     <span class="hamburger"></span>
@@ -7,16 +7,11 @@
 </template>
 
 <script>
-import state from '@eugeo/store/';
-
 export default {
   name: 'Menu',
-  data: () => ({
-    state
-  }),
   methods: {
     handleMenuClick() {
-      state.isSideBarHidden = !state.isSideBarHidden;
+      this.store.isSideBarHidden = !this.store.isSideBarHidden;
     }
   }
 };
